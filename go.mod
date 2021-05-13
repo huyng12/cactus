@@ -3,10 +3,8 @@ module github.com/huyng12/cactus
 go 1.16
 
 require (
-	github.com/andybalholm/brotli v1.0.2 // indirect
-	github.com/gofiber/fiber/v2 v2.9.0 // indirect
-	github.com/klauspost/compress v1.12.2 // indirect
-	github.com/valyala/fasthttp v1.24.0 // indirect
-	github.com/valyala/tcplisten v1.0.0 // indirect
-	golang.org/x/sys v0.0.0-20210511113859-b0526f3d8744 // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/kelseyhightower/envconfig v1.4.0
+	github.com/pkg/errors v0.9.1 // indirect
+	gopkg.in/tucnak/telebot.v2 v2.3.5
 )

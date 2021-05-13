@@ -1,12 +1,11 @@
 package handler
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"gopkg.in/tucnak/telebot.v2"
+)
 
-type HealthCheckResponse struct {
-	Alive bool `json:"alive"`
-}
-
-func HealthCheck(ctx *fiber.Ctx) error {
-	status := HealthCheckResponse{Alive: true}
-	return ctx.JSON(status)
+func HealthCheck(bot *telebot.Bot) func(msg *telebot.Message) {
+	return func(msg *telebot.Message) {
+		_, _ = bot.Send(msg.Chat, "I'm here 🤨")
+	}
 }

@@ -1,17 +1,15 @@
 package handler
 
 import (
-	"github.com/gofiber/fiber/v2"
+	"fmt"
+
 	"github.com/huyng12/cactus/internal/wallet"
+	"gopkg.in/tucnak/telebot.v2"
 )
 
-type CheckBalanceResponse struct {
-	Balance int `json:"balance"`
-}
-
-func CheckBalance(w wallet.Walleter) fiber.Handler {
-	return func(ctx *fiber.Ctx) error {
+func CheckBalance(bot *telebot.Bot, w wallet.Walleter) func(msg *telebot.Message) {
+	return func(msg *telebot.Message) {
 		currentBalance := w.GetBalance()
-		return ctx.JSON(CheckBalanceResponse{Balance: currentBalance})
+		_, _ = bot.Send(msg.Chat, fmt.Sprintf("💵 Balance: %d", currentBalance))
 	}
 }
