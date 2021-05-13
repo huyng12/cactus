@@ -8,8 +8,8 @@ type Tx struct {
 	CreatedAt time.Time
 }
 
-func MakeTx(amount int, purpose string) *Tx {
-	return &Tx{
+func MakeTx(amount int, purpose string) Tx {
+	return Tx{
 		Amount:    amount,
 		Purpose:   purpose,
 		CreatedAt: time.Now(),

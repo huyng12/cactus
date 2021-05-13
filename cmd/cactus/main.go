@@ -29,7 +29,8 @@ func main() {
 
 	log.Print("Bot is ready [o_o]")
 
-	bot.Handle("/health_check", handler.HealthCheck(bot))
-	bot.Handle("/balance", handler.CheckBalance(bot, wlt))
+	bot.Handle("/summon", handler.HealthCheck(bot))
+	bot.Handle("/vi", handler.CheckBalance(bot, wlt))
+	bot.Handle("/mua", handler.Pay(bot, wlt))
 	bot.Start()
 }

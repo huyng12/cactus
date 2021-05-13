@@ -10,6 +10,7 @@ import (
 func CheckBalance(bot *telebot.Bot, w wallet.Walleter) func(msg *telebot.Message) {
 	return func(msg *telebot.Message) {
 		currentBalance := w.GetBalance()
-		_, _ = bot.Send(msg.Chat, fmt.Sprintf("💵 Balance: %d", currentBalance))
+		_, _ = bot.Send(msg.Chat,
+			fmt.Sprintf("💵 Số tiền trong tài khoản: %d", currentBalance))
 	}
 }
